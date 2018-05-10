@@ -20,12 +20,43 @@
 #demo1
 {
 	position: absolute;
-	right: 170px;
-    margin-top: 160px;
+	right: 185px;
+    margin-top: 260px;
 	font-family: 'Orbitron';
 	color: black;
 	font-weight: bold;
 	font-size:20px;
+}
+#demo3
+{
+	position: absolute;
+	right: 185px;
+    margin-top: 360px;
+	font-family: 'Orbitron';
+	color: black;
+	font-weight: bold;
+	font-size:20px;
+}
+#demo6
+{
+	  position: absolute;
+	  font-family: 'Orbitron';
+	color: red;
+	font-weight: bold;
+	font-size:20px;
+}
+.nav-tabs
+{
+background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(0, 0, 0), rgb(67, 67, 67)) repeat scroll 0% 0%;
+}
+#bd
+{
+	background-image: url('https://cdn3.iconfinder.com/data/icons/stock/484/stock_find_search_online_computer_trend-512.png');
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    
+	
 }
 #sel
 {
