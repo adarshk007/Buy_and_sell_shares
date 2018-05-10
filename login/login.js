@@ -21,7 +21,10 @@ alert("Wrong Username or Wrong Password");
 return false;
 }
 else{
-window.open('adarshk007/Buy_and_sell_shares/dashboard/dashboard.html?user_id='+name);
+var str=window.location.href;
+var d=str.split('/login');
+var z=d[0]+'/dashboard/dashboard.html?user_id='+name;
+window.open(z);
 
 //window.location.replace
 //window.open("https://www.google.com","_top");
