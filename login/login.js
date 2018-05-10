@@ -21,6 +21,10 @@ alert("Wrong Username or Wrong Password");
 return false;
 }
 else{
+window.open('/home/adarsh/Desktop/trade_brains/dashboard/dashboard.html?user_id='+name);
+
+//window.location.replace
+//window.open("https://www.google.com","_top");
 return true;
 }
 
