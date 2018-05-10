@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+.btn-success {
+    position: absolute;
+    right: 20px;
+    margin-top: 5px;
+    width: 80px;
+    height:30px;
+    padding:0px;
+}
+#demo
+{
+	position: absolute;
+	right: 150px;
+    margin-top: 160px;
+	font-family: 'Orbitron';
+	color: black;
+	font-weight: bold;
+	font-size:20px;
+}
+#demo1
+{
+	position: absolute;
+	right: 170px;
+    margin-top: 160px;
+	font-family: 'Orbitron';
+	color: black;
+	font-weight: bold;
+	font-size:20px;
+}
+#sel
+{
+	 
+	background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(209, 145, 60), rgb(255, 209, 148)) repeat scroll 0% 0%;
+      height: 95%;
+      position: absolute;
+      top: 42px;
+      right: 0px;
+      width: 30%;
+}
