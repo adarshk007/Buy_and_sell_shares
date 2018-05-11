@@ -9,6 +9,10 @@ function read()
 	var sr=res[1].split("#");
 	
     document.getElementById("demo6").innerHTML = sr[0];
+  // else
+  // {
+  //   document.write("<centre><h2>404 Page error/h2></centre>");
+  // }
 }
 
 
@@ -20,10 +24,31 @@ request.onload = function () {
 
   // Begin accessing JSON data here
   var data = JSON.parse(this.response);
- 
+  var i=1;
+  var test="<input type='text' class='form-control' placeholder='Qty' id='usr'/>";
   if (request.status >= 200 && request.status < 400) {
     data.forEach(data => {
-      document.write("<p>"+data.company+"</p>"+"<br>");
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(i);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    cell1.innerHTML = data.company;
+    cell2.innerHTML = data.price;
+    if(data.status=="low"){
+    cell3.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Red_Arrow_Down.svg/768px-Red_Arrow_Down.svg.png' alt='hello' width='20px' align='middle'/>";}
+    else
+    {
+    cell3.innerHTML = "<img src='https://user-images.githubusercontent.com/23396919/39935778-c665fb5e-5567-11e8-8c5a-d0569836083f.png' alt='hello' width='20px' align='middle'/>";
+    }
+    cell4.innerHTML="100";
+    cell5.innerHTML=test;
+    cell6.innerHTML="<button type='button' class='btn btn-default'>Buy</button>";
+    i=i+1;
+     
     });
   } else {
     console.log('error');
@@ -33,7 +58,7 @@ request.onload = function () {
 request.send();
 }
 read();
-//apiaccess();
+apiaccess();
 
 /*
 
