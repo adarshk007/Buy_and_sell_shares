@@ -2,6 +2,8 @@ function logout(){
 	window.top.close();
 }
 
+var balance=1000000;
+var quantity=0;
 function read()
 {
 	var str=window.location.href;
@@ -9,6 +11,8 @@ function read()
 	var sr=res[1].split("#");
 	
     document.getElementById("demo6").innerHTML = sr[0];
+    document.getElementById("the").innerHTML = balance;
+    document.getElementById("the2").innerHTML = quantity;
   // else
   // {
   //   document.write("<centre><h2>404 Page error/h2></centre>");
@@ -25,9 +29,11 @@ request.onload = function () {
   // Begin accessing JSON data here
   var data = JSON.parse(this.response);
   var i=1;
-  var test="<input type='text' class='form-control' placeholder='Qty' id='usr'/>";
   if (request.status >= 200 && request.status < 400) {
     data.forEach(data => {
+    var ze='usr'+i;
+    var test="<input type='text' class='form-control' placeholder='Qty' id="+ze+" />";
+    var test2="<button onclick='load("+i+")' type='button' class='btn btn-default'>Buy</button>";
     var table = document.getElementById("myTable");
     var row = table.insertRow(i);
     var cell1 = row.insertCell(0);
@@ -46,7 +52,7 @@ request.onload = function () {
     }
     cell4.innerHTML="100";
     cell5.innerHTML=test;
-    cell6.innerHTML="<button type='button' class='btn btn-default'>Buy</button>";
+    cell6.innerHTML=test2;
     i=i+1;
      
     });
@@ -57,6 +63,55 @@ request.onload = function () {
 
 request.send();
 }
+var array = new Array(15);
+for (var i = 0; i < 15; i++) {
+  array[i] = new Array(4);
+}
+
+
+  function load(i){
+    var we=i;
+    var temp="usr"+i;
+  var val = document.getElementById(temp).value;
+  
+     var oTable = document.getElementById('myTable');
+  
+    //gets rows of table
+    var rowLength = oTable.rows.length;
+
+    //loops through rows    
+    for (i = 0; i < rowLength; i++){
+
+      //gets cells of current row  
+       var oCells = oTable.rows.item(i).cells;
+
+       
+       var cellLength = oCells.length;
+       //loops through each cell in current row
+       for(var j = 0; j < cellLength; j++){
+
+              
+
+              var cellVal = oCells.item(j).innerHTML;
+              array[i][j]=cellVal
+              
+           }
+    }
+    var store=parseInt(array[0][5]);
+    store=store+parseInt(val);
+    var t=""+store;
+    var tables = document.getElementById('myTable');
+    tables.rows[0].cells[5].innerHTML =t;
+     var st=parseFloat(array[we][1]);
+     var c_val=st*parseFloat(val);
+     var change=parseFloat(array[0][4]);
+     change=change-c_val;
+     var k=""+change;
+    tables.rows[0].cells[4].innerHTML =k;
+      }
+
+
+
 read();
 apiaccess();
 
