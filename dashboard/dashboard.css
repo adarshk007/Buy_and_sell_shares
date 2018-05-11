@@ -124,6 +124,14 @@ background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(0, 0, 0), rgb(67, 67,
 	  color:#A7A1AE;
 	  background-color: #1F2739;
 }
+.container th:nth-child(5){
+	  color:#FB667A;
+	  background-color: #1F2739;
+}
+.container th:nth-child(6){
+	  color:#FB667A;
+	  background-color: #1F2739;
+}
 .container td:first-child { color: #FB667A; }
 
 .container td:first-child+td{ color: #A7A1AE; }
