@@ -32,7 +32,7 @@ request.onload = function () {
   if (request.status >= 200 && request.status < 400) {
     data.forEach(data => {
     var ze='usr'+i;
-    var test="<input type='text' class='form-control' placeholder='Qty' id="+ze+" />";
+    var test="<input type='text' required='required' class='form-control' placeholder='Qty' id="+ze+" />";
     var test2="<button onclick='load("+i+")' type='button' class='btn btn-default'>Buy</button>";
     var table = document.getElementById("myTable");
     var row = table.insertRow(i);
