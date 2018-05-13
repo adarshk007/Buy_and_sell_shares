@@ -74,7 +74,11 @@ for (var i = 0; i < 15; i++) {
     var temp="usr"+i;
   var val = document.getElementById(temp).value;
   var regex=/^[a-zA-Z]+$/;
-    if (val.match(regex))
+   if(val=='')
+    {
+       alert("Please enter value");
+    }
+    else if (val.match(regex))
     {
         alert("Please enter valid number only");
     }
