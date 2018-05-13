@@ -32,7 +32,7 @@ request.onload = function () {
   if (request.status >= 200 && request.status < 400) {
     data.forEach(data => {
     var ze='usr'+i;
-    var test="<input type='text' required='required' class='form-control' placeholder='Qty' id="+ze+" />";
+    var test="<input type='text' class='form-control' placeholder='Qty' id="+ze+" />";
     var test2="<button onclick='load("+i+")' type='button' class='btn btn-default'>Buy</button>";
     var table = document.getElementById("myTable");
     var row = table.insertRow(i);
@@ -73,8 +73,18 @@ for (var i = 0; i < 15; i++) {
     var we=i;
     var temp="usr"+i;
   var val = document.getElementById(temp).value;
-  
+  var regex=/^[a-zA-Z]+$/;
+    if (val.match(regex))
+    {
+        alert("Please enter valid number only");
+    }
+    else if(val>100)
+    {
+      alert("Sorry! you can Buy 100 at a time");
+    }
+    else{
      var oTable = document.getElementById('myTable');
+    
   
     //gets rows of table
     var rowLength = oTable.rows.length;
@@ -103,11 +113,24 @@ for (var i = 0; i < 15; i++) {
     var tables = document.getElementById('myTable');
     tables.rows[0].cells[5].innerHTML =t;
      var st=parseFloat(array[we][1]);
-     var c_val=st*parseFloat(val);
+ 
+     var c_val=st*(val);
+ 
+    
      var change=parseFloat(array[0][4]);
-     change=change-c_val;
-     var k=""+change;
+     
+     var wq=Math.round((change-c_val) * 100) / 100;
+    if(wq<0)
+    {
+      alert("You Can't Afford(Not Enough Money)");
+    }
+    else{
+     var k=""+wq;
+    
+    
     tables.rows[0].cells[4].innerHTML =k;
+  }
+  }
       }
 
 
