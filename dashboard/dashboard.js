@@ -23,7 +23,7 @@ function read()
 function apiaccess(){
 var request = new XMLHttpRequest();
 
-request.open('GET','https://raw.githubusercontent.com/adarshk007/only-pics/master/data.json?token=AWUCNz-mfXvW43MzRuZTpQYy0fo38CP6ks5a_b4ewA%3D%3D' , true);
+request.open('GET','https://raw.githubusercontent.com/adarshk007/only-pics/master/data.json?token=AWUCN3iX1l-P52hhATb4-vgDcXZuFYUzks5bCFBFwA%3D%3D' , true);
 request.onload = function () {
 
   // Begin accessing JSON data here
